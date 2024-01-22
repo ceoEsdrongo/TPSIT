@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int main(void) {
+      int N,num,max=0,min=0;
+
+      printf("Inserisci un numero ");
+      scanf("%d", &N);
+
+      while (N<= 0) {
+          printf("Numero non valido, riprova ");
+          scanf("%d", &N);
+      }
+      for (int i = 1; i <= N; i++) {
+        
+        do {
+            printf("Inserisci i numeri da verificare %d: ", i);
+            scanf("%d", &num);
+
+            if (num <= 0) {
+                printf("Inserisci un numero valido (maggiore di zero).\n");
+            }
+        } while (num <= 0);
+
+        if (num > max) {
+            max = num;
+        }
+
+        if (num< min || i == 1) {
+            min = num;
+        }
+      }
+
+      printf("Il massimo è: %d\n", max);
+      printf("Il minimo  è: %d\n", min);
+
+  return 0;
+}
