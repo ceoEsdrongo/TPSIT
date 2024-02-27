@@ -1,0 +1,30 @@
+/*Scrivere un programma in c che dopo aver inserito da tastiera una serie di N numeri, con N scelto
+dall’utente determini e visualizzi in Output:
+1) La media dei numeri inseriti;
+2) La media dei numeri pari inseriti;
+3) La media dei numeri dispari inseriti;
+4) Il massimo ed il minimo dei numeri pari inseriti;
+5) Il massimo ed il minimo dei numeri dispari inseriti;
+I numeri inseriti devono essere maggiori di zero, se il numero inserito dall’utente risulta essere minore o
+uguale a zero il programma deve permettere il reinserimento.
+
+Utilizzare i vettori per la svolgimento della soluzione.*/
+#include <stdio.h>
+int main(){
+        int n, max,min, vettore[10],somma;
+        float media;
+        do{
+            printf("inserisci degli elementi numerici (max 10)");
+            scanf("%d", &n);
+        }while(n<=0||n>10);
+        printf("inserisci i numeri");
+        for(int i=0;i<n;i++){
+            printf("inserisci il %d ", i+1);
+            scanf("%d", &vettore[i]);
+            somma=somma+vettore[i];
+            
+        }
+        media=(float)somma/2;
+        printf("i numeri sono %f", media);
+    return 0;
+}
